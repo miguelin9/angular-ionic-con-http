@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Lista artículos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let articulo of articulos">
+      <!-- <ion-avatar item-start> -->
+        <img [src]="articulo.foto">
+      <!-- </ion-avatar> -->
+      <h2>{{ articulo.nombre | uppercase }}</h2>
+      <p>{{ articulo.codigo }}</p>
+      <button (click)="subirArticulo()">SUBIR</button>
+      <button (click)="borrarArticulo(articulo)">BORRAR</button>
+      <button (click)="actualizarArticulo(articulo)">ACTUALIZAR</button>
+    </ion-item>
+  </ion-list>
+</ion-content>
